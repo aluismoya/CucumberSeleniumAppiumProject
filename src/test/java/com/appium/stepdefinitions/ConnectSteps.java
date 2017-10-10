@@ -4,6 +4,7 @@ import bean.User;
 import com.appium.example.BaseAppium;
 import com.appium.example.Login;
 import com.utils.PropertyLoader;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -41,6 +42,12 @@ public class ConnectSteps {
         Login login = new Login();
         Assert.assertTrue(login.isUserLogged());
         login.logout();
+    }
+
+    @After
+    public void close() {
+        BaseAppium baseAppium = new BaseAppium();
+        baseAppium.tearDown();
     }
 
 }

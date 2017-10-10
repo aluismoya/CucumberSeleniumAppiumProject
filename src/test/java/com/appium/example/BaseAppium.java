@@ -43,7 +43,6 @@ public class BaseAppium {
         }
     }
 
-
     public void tearDown() {
         if(driver != null) {
             driver.quit();
